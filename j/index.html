@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kadra — Join a room</title>
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kadra">
+<meta property="og:title" content="Kadra — you're invited to a room">
+<meta property="og:description" content="Open the code and join the table. The party game that runs on your own camera roll.">
+<meta property="og:image" content="https://wipastudio.github.io/kadra/assets/invite-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://wipastudio.github.io/kadra/j/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kadra — you're invited to a room">
+<meta name="twitter:description" content="Open the code and join the table.">
+<meta name="twitter:image" content="https://wipastudio.github.io/kadra/assets/invite-card.png">
+
+<link rel="stylesheet" href="/kadra/style.css">
+<style>
+.code{font:700 44px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:var(--accent);margin:18px 0 6px}
+.cta{display:inline-block;margin:18px 0 0;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+.muted{color:var(--ink-3);font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="brand">Kadra</p>
+  <h1 id="title">Join a room</h1>
+  <p class="lede" id="lede">Open Kadra and enter this code.</p>
+  <nav>
+    <a href="/kadra/">Support</a>
+    <a href="/kadra/privacy.html">Privacy Policy</a>
+    <a href="/kadra/tr/">Türkçe</a>
+  </nav>
+</header>
+
+<div class="box" id="join" hidden>
+  <p class="muted" id="codeLabel">Room code</p>
+  <p class="code" id="code"></p>
+  <a class="cta" id="open" href="#">Open in Kadra</a>
+  <p class="muted" id="store">Don't have Kadra yet? It's on the App Store.</p>
+</div>
+
+<div class="box" id="missing" hidden>
+  <p id="missingText">This page doesn't exist. Try the support page.</p>
+</div>
+
+<script>
+(function () {
+  var tr = (navigator.language || "").toLowerCase().indexOf("tr") === 0;
+  // Iki bicim de kabul ediliyor:
+  //   /kadra/j/KOD    -- eski davetler (GitHub Pages bunu 404.html ile
+  //                      sunuyor; sayfa aciliyor ama DURUM 404, ve
+  //                      mesajlasma uygulamalari 404'e onizleme kartI
+  //                      uretmiyor)
+  //   /kadra/j/?c=KOD -- yeni davetler. Bu gercek bir dosya, yani 200
+  //                      doner ve onizleme kartI olusur.
+  var q = new URLSearchParams(location.search).get("c") || "";
+  var m = /^[A-Za-z0-9]{5}$/.test(q)
+        ? [null, q]
+        : location.pathname.match(/^\/kadra\/j\/([A-Za-z0-9]{5})\/?$/);
+  var T = tr ? {
+    title: "Odaya katıl", lede: "Kadra'yı aç ve bu kodu gir.", codeLabel: "Oda kodu",
+    open: "Kadra'da aç", store: "Kadra yüklü değil mi? App Store'da.",
+    missing: "Bu sayfa yok. Destek sayfasını dene."
+  } : null;
+  if (T) { for (var k in T) { var el = document.getElementById(k === "missing" ? "missingText" : k); if (el) el.textContent = T[k]; } document.documentElement.lang = "tr"; }
+  if (m) {
+    var code = m[1].toUpperCase();
+    document.getElementById("code").textContent = code;
+    // Ozel sema: uygulama yukluyse acar. Evrensel baglanti calisan
+    // cihazlar bu sayfayi zaten gormez; burasi yedek yol.
+    document.getElementById("open").href = "kadra://j/" + code;
+    document.getElementById("join").hidden = false;
+  } else {
+    document.getElementById("title").textContent = tr ? "Sayfa bulunamadı" : "Page not found";
+    document.getElementById("lede").textContent = "";
+    document.getElementById("missing").hidden = false;
+  }
+})();
+</script>
+</div>
+</body>
+</html>

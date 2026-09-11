@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kadra — Gizlilik Politikası</title>
+<meta name="description" content="Kadra fotoğraflarınla ve verilerinle ne yapar, ne yapmaz.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="brand">Kadra</p>
+  <h1>Gizlilik Politikası</h1>
+  <p class="lede">Kadra kendi fotoğraflarınla oynanan bir oyun; dolayısıyla burası en önemli
+     kısım. Güven vermek için değil, kontrol edilebilir olsun diye yazıldı.</p>
+  <p class="updated">Son güncelleme: 10 Eylül 2026 (Ayarlar'da geri bildirim kutusu) · Kadra 1.0 (iOS) için geçerli</p>
+  <nav>
+    <a href="./">Destek</a>
+    <a href="privacy.html" aria-current="page">Gizlilik</a>
+    <a href="terms.html">Kullanım Koşulları</a>
+    <a href="../privacy.html">English</a>
+  </nav>
+</header>
+
+<div class="box">
+  <p><strong>Kısa hâli.</strong> Hesap yok. Fotoğrafların hiçbir sunucuda saklanmıyor ve hiçbir
+     görsel analitiğe gönderilmiyor. Uygulamada yaptığın hiçbir şey adınla, e-postanla veya
+     Apple hesabınla ilişkilendirilmiyor — yalnızca cihazında üretilen rastgele bir kimlikle.</p>
+</div>
+
+<h2>1. Biz kimiz</h2>
+<p>Kadra, Wipa Studios ("biz") tarafından geliştiriliyor. Bu politikayla ilgili her şey için:
+   <a href="mailto:wipastudios@gmail.com">wipastudios@gmail.com</a>.</p>
+
+<h2>2. Fotoğrafların</h2>
+
+<h3>Oyuna neyin gireceğini sen seçersin</h3>
+<p>Bir gece başlarken kapsamı sen belirliyorsun: tüm galerin, belirli albümler veya tek tek
+   seçtiğin fotoğraflar. Kadra fotoğrafları Apple'ın PhotoKit'i üzerinden ve yalnızca senin
+   seçtiğin kapsam içinde okuyor. Yalnızca seçili fotoğraflara izin verdiysen Kadra başka
+   hiçbir şeyi göremez.</p>
+
+<h3>Otomatik olarak dışarıda kalanlar</h3>
+<ul>
+  <li>Ekran görüntüleri ve belge taramaları.</li>
+  <li>Son 48 saat içinde oluşturulmuş her şey.</li>
+  <li>Gizli albümün — iOS onu uygulamalara açmaz, Kadra hiç görmez.</li>
+  <li>"Bir daha asla gösterme" dediğin fotoğraflar.</li>
+</ul>
+<p>Her aday ayrıca Apple'ın cihaz üstünde çalışan Hassas İçerik Analizi'nden geçiyor.
+   Bu analiz cihazında çalışır; sonucu cihazından hiç çıkmaz.</p>
+
+<h3>Aynı odada oynarken</h3>
+<p>Cihazlar birbirini Apple'ın MultipeerConnectivity'siyle yerel ağdan buluyor ve elin
+   fotoğrafı doğrudan bir cihazdan diğerlerine gidiyor. <strong>İnternete hiçbir şey çıkmıyor,
+   bize de hiçbir şey gelmiyor.</strong></p>
+
+<h3>Uzaktan oynarken</h3>
+<p>O anki elin fotoğrafı, diğer oyuncular görebilsin diye Supabase'in işlettiği bir gerçek
+   zamanlı mesaj kanalından geçiyor. Aktarılıyor, saklanmıyor: bir veritabanına veya dosya
+   deposuna yazılmıyor ve el bittikten sonra tutulmuyor. Sonradan bir fotoğrafı çıkaramayız,
+   çünkü tutulmuş olabileceği bir yer yok.</p>
+
+<h3>Hiçbir zaman iletilmeyenler</h3>
+<p>Hangi modda olursan ol şunlar cihazından çıkmaz: fotoğrafın dosya adı, yerel kimliği,
+   çekildiği konum, albüm adı, hassas içerik analizinin sonucu ve kalkanla hangi fotoğrafı
+   elediğin.</p>
+
+<h2>3. Kullanım analitiği</h2>
+<p>Kadra, neyi iyileştireceğimize karar verebilmek için hangi ekranları açtığını ve hangi
+   düğmelere bastığını kaydediyor. Bu olaylar, bizim adımıza işleyen Google Firebase
+   Analytics'e gönderiliyor. İstediğin an kapatabilirsin:
+   <strong>Ayarlar → Verilerin → Anonim kullanım verisi gönder</strong>. Kapattığında toplama
+   tamamen durur.</p>
+
+<h3>Bir olayın içinde ne var</h3>
+<p>Bir ekranın veya düğmenin adı, oynanan mod, odada kaç kişi olduğu, bu cihazın odayı açan mı
+   katılan mı olduğu, bir karenin yüklenip yüklenmediği ve ne kadar sürdüğü, aktarılan karenin
+   boyut aralığı. Son ikisi, uygulamanın insanlarda gerçekten çalışıp çalışmadığını anladığımız
+   şey — boş bir çerçeve, başka türlü göremeyeceğimiz bir hata.</p>
+
+<h3>Bir olayın içinde asla ne yok</h3>
+<p>Tasarım gereği, ve her derlemede çalışan otomatik bir denetimle zorlanarak: herhangi bir
+   fotoğraf veya küçük görseli, dosya adı veya kimliği, çekim konumu, albüm adı, rapor metni,
+   takma adın ya da oda kodu. <strong>Hiçbir görsel ve hiçbir görselden türetilmiş şey
+   analitiğe gitmiyor.</strong></p>
+
+<h3>Kimlik, açık açık</h3>
+<p>Olaylar, uygulamayı ilk açtığında <strong>cihazında üretilen rastgele bir kimlik</strong>
+   altında gruplanıyor. Var olma sebebi şu: bir şey bozulduğunda tek bir adım dizisini takip
+   edip nerede bozulduğunu görebilmek. Bunun ne demek olduğu ve ne demek olmadığı konusunda
+   kesin konuşmak istiyoruz:</p>
+<ul>
+  <li>Cihazından türetilmiş <strong>değil</strong>. IDFA'yı da satıcı kimliğini de
+      kullanmıyoruz.</li>
+  <li>Adına, e-postana, Apple hesabına veya satın almalarına bağlı <strong>değil</strong> —
+      çünkü Kadra'da bunların hiçbiri yok.</li>
+  <li>Ama senin olaylarını birbirine <strong>bağlıyor</strong>. Bu da onu anonim değil
+      <em>takma adlı</em> yapıyor; kulağa daha iyi gelen bir kelime kullanmaktansa bunu
+      söylemeyi tercih ediyoruz.</li>
+  <li><strong>Uygulama içinden sıfırlanamaz.</strong> Önceki sürümlerde bir sıfırlama düğmesi
+      vardı; hediye geceler (aşağıda) eklenince kaldırıldı, çünkü hediye bu kimliğe bağlanıyor ve
+      sıfırlanabilen bir kimlik tek gecelik hediyeyi tekrar tekrar kullanılabilir yapardı. Kimlik
+      yalnızca uygulamanın kendi deposunda yaşar: uygulamayı silmek onu da siler, yeni kurulum
+      yeni bir kimlik alır.</li>
+  <li><strong>Hediye geceler.</strong> Belirli bir kuruluma ya da belirli bir oda koduna elle,
+      tek seferlik bir premium gece verebiliriz. Premium geçişin yokken bir oda kurduğunda
+      uygulama bu kimliği ve oda kodunu sunucumuza gönderip böyle bir hediye var mı diye sorar.
+      Cevap evet ya da hayırdır. Hayırsa hiçbir şey saklanmaz. Evetse sunucu hediyeyi hangi
+      kurulumun ne zaman kullandığını kaydeder; böylece iki kez kullanılamaz.</li>
+</ul>
+<p>Firebase ayrıca kendi kurulum kimliğini atıyor ve yaklaşık bölge, cihaz modeli ve uygulama
+   sürümünü kaydediyor. Google'ın bu hizmete dair koşulları:
+   <a href="https://firebase.google.com/terms/data-processing-terms">firebase.google.com/terms</a>.</p>
+
+<h2>4. Örnek kareler — sen açmadıkça kapalı</h2>
+<p>Fotoğrafının cihazından bize ulaşabileceği tek yer burası ve yalnızca sen seçersen olur.
+   Kurulumda doğrudan bir soru soruluyor: iki seçenek eşit ağırlıkta ve
+   <strong>hiçbiri önceden işaretli değil</strong>; cevaplamadan geçemiyorsun. Varsayılan hal
+   kapalı. Cevabını istediğin an Ayarlar &rarr; Verilerin bölümünden değiştirebilirsin.</p>
+
+<h3>Evet dersen ne gönderilir</h3>
+<ul>
+  <li><strong>Gece başına en fazla bir kare</strong>, oynadığın eller arasından rastgele seçilir —
+      ilki değil, çünkü ilk kare herkesin oyuna açılışta soktuğu fotoğraf olur ve gecenin
+      geri kalanını temsil etmez.</li>
+  <li><strong>Yalnızca kendi fotoğrafın.</strong> Odadaki başka bir oyuncunun karesi asla
+      gönderilmez: bu izni onlar vermedi ve onların adına vermek bize düşmez.</li>
+  <li><strong>Kalkanla elediğin kare asla.</strong> Kalkan kararı, gönderime hazırlık
+      başlamadan önce kontrol edilir.</li>
+  <li>Görsel, oyunun kendi kullandığı 800 piksellik yeniden kodlanmış JPEG'in aynısı. Orijinal
+      dosyadan kopyalanmadığı, çizilmiş kareden üretildiği için <strong>GPS koordinatları dahil
+      EXIF verisi bu adımda düşer.</strong></li>
+  <li>Yanında: yukarıda anlatılan kimlik, zaman damgası ve uygulama sürümü.
+      Başka hiçbir şey — dosya adı yok, yerel tanımlayıcı yok, çekim konumu yok, albüm adı yok,
+      takma ad yok, oda kodu yok.</li>
+</ul>
+
+<h3>Ne için kullanılır</h3>
+<p>İki şey için, ve ikisini de yazmayı tercih ediyoruz. Birincisi, karelerin farklı cihazlarda
+   doğru çözülüp boyutlanıp gösterildiğini doğrulamak — okunamayan bir görsel, yalnızca
+   sayılara bakarak göremeyeceğimiz bir hata. İkincisi, oyunun gerçekte nasıl bir içerikle
+   çalıştığını anlamak; havuz filtrelerinin ve modların tasarımı buna dayanıyor.</p>
+
+<h3>Ne kadar kalır, nasıl silinir</h3>
+<p>Kareler gönderildikten <strong>30 gün</strong> sonra otomatik silinir; bunu bir depolama
+   yaşam döngüsü kuralı yapıyor, kimsenin hatırlamasına bağlı değil. Gönderdiklerinin hepsini
+   hemen silmek için Ayarlar &rarr; Verilerin &rarr; Gönderdiğin kareler &rarr; Sil. Bu düğme
+   ayar açık da olsa kapalı da olsa çalışır ve &laquo;her şeyi sil&raquo; de bunları siler.
+   Saklanan kareleri yalnızca biz okuyabiliriz; depolama kuralları her istemciye okumayı
+   kapatıyor.</p>
+
+<h3>Hayır dersen</h3>
+<p>Hiçbir şey gönderilmez ve oyun her açıdan aynıdır. Bu cevabın arkasında hiçbir özellik,
+   mod veya içerik yok.</p>
+
+<h2>5. Satın almalar</h2>
+<p>Kadra Premium, Apple'ın Uygulama İçi Satın Alma sistemiyle satılıyor. Ödeme bilgilerini biz
+   hiç görmüyoruz; işlemi Apple yürütüyor.</p>
+<p>Satın almanın aktif olup olmadığını bilmek için abonelik yönetimi servisi olarak
+   RevenueCat, Inc. kullanıyoruz. RevenueCat, satın alma geçmişini ve kurulumun için üretilmiş
+   anonim bir tanımlayıcıyı alıyor. Adını, e-postanı veya Apple hesabını almıyor; biz de o
+   tanımlayıcıyı hiçbir kimlikle eşleştirmiyoruz. RevenueCat'in kendi gizlilik politikası:
+   <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
+<p><strong>Kontrol yalnızca cihazında yapılmıyor.</strong> Ücretli bir özelliğin uygulamayı
+   kurcalayarak açılamaması için uygulama, yukarıda anlatılan rastgele tanımlayıcıyı ve
+   RevenueCat'in bu kurulum için ürettiği anonim tanımlayıcıyı sunucumuza gönderiyor. Sunucu
+   RevenueCat'e o kurulumun aktif bir satın alması olup olmadığını soruyor ve cevabı saklıyor:
+   premium var mı yok mu, satın almadan mı hediye geceden mi geldiği, ne zamana kadar geçerli
+   olduğu ve kontrolün zamanı. Ödeme bilgilerin bu adımın parçası değil, bize hiç ulaşmıyor.
+   Sunucumuz cevap veremezse uygulama mağaza SDK'sının söylediğine düşüyor; yani ağ çalışmasa
+   da satın alman çalışıyor.</p>
+
+<h2>6. Servisi ayakta tutmak</h2>
+<p>Sunucumuza herkes istek gönderebilir; bu yüzden her istek iki anahtara göre sayılıyor:
+   yukarıdaki kurulum tanımlayıcısı ve isteğin geldiği <strong>IP adresinin tek yönlü
+   özeti</strong>. Adresin kendisi hiçbir yere yazılmıyor — yalnızca özet, o da sunucudan
+   çıkmayan bir anahtarla tuzlanıyor, yani geri çevrilip adrese dönüştürülemiyor. Sayaçlarda
+   başka hiçbir şey yok: istek içeriği yok, fotoğraf yok, oda kodu yok. Zamanlanmış bir iş
+   bunları iki gün sonra siliyor.</p>
+
+<h2>7. Cihazında saklananlar</h2>
+<div class="tablewrap">
+<table>
+  <tr><th>Ne</th><th>Neden</th><th>Nasıl silinir</th></tr>
+  <tr><td>Takma adın ve rengin</td><td>Oda kim olduğunu gösterebilsin diye</td>
+      <td>Ayarlar → Verilerin → Her şey</td></tr>
+  <tr><td>Kaydedilmiş geceler (kasa) ve rozetler</td><td>Anı defteri</td>
+      <td>Ayarlar → Verilerin → Kaydedilmiş geceler</td></tr>
+  <tr><td>"Asla gösterme" listesi</td><td>Elenen fotoğraf geri gelmesin diye</td>
+      <td>Ayarlar → Verilerin → Asla gösterme listesi</td></tr>
+  <tr><td>Engellenen oyuncular ve raporlar</td><td>Bir daha eşleşmeyesin diye</td>
+      <td>Ayarlar → Verilerin → Her şey</td></tr>
+  <tr><td>Tercihlerin (kalkan açık/kapalı, analitik açık/kapalı)</td><td>Her seferinde sormayalım diye</td>
+      <td>Ayarlar → Verilerin → Her şey</td></tr>
+</table>
+</div>
+<p>Uygulamayı silmek de hepsini kaldırır.</p>
+
+<h2>8. Raporlar</h2>
+<p>Bir fotoğrafı veya oyuncuyu rapor ettiğinde, rapor cihazında saklanıyor ve o oyuncu senin
+   için engelleniyor. Yazdığın not bize iletilmiyor ve analitiğe gitmiyor. Bir raporla ilgili
+   işlem yapmamızı istiyorsan bize e-posta at ve anlat — bu bilinçli bir tercih, çünkü rapor
+   metnini otomatik göndermek, toplamayacağımıza söz verdiğimiz içeriği göndermek olurdu.</p>
+
+<h2>9. Bize gönderdiğin geri bildirim</h2>
+<p>Ayarlar'da bir geri bildirim kutusu var. Sen bir şey yazıp Gönder'e basmadıkça oradan hiçbir
+   şey gitmez — arka planda toplanan bir şey yok.</p>
+<p>Gönderdiğinde bize mesajınla birlikte uygulama sürümü ve derleme numarası, dil ayarın, cihaz
+   modelin (örneğin <code>iPhone17,1</code>) ve 3. bölümdeki kurulum kimliğin ulaşır.
+   <strong>Hiçbir fotoğraf eklenmez; uygulamadan başka hiçbir şey gitmez.</strong> Ekran, bu
+   alanları göndermeden önce gerçek değerleriyle listeler.</p>
+<p>Burası, yazdığın bir şeyin cihazından çıktığı tek yer. Bilinçli olarak böyle kurduk: sen
+   yazıyorsun, yanında tam olarak neyin gittiğini okuyabiliyorsun ve ancak Gönder'e basınca
+   hareket ediyor. Raporlar (8. bölüm) hâlâ tersi şekilde çalışıyor — o metin telefonundan hiç
+   çıkmıyor.</p>
+<p>Geri bildirimi yalnızca sorunları anlamak ve düzeltmek için kullanıyoruz. Mesajlar 180 gün
+   sonra siliniyor. Daha erken silinmesini istersen kurulum kimliğinle (Ayarlar → Verilerin →
+   kopyala) bize e-posta at, kaldıralım. Geri bildirim, kurulum başına günde beş mesajla
+   sınırlıdır.</p>
+
+<h2>10. Çocuklar</h2>
+<p>Kadra çocuklara yönelik değildir. Oyun, oyuncuların telefonundaki fotoğraflarla oynandığı
+   için içeriğini masadakiler belirler; App Store yaş sınırı da bunu yansıtır. Bir çocuğun
+   uygulamayı seni endişelendiren bir şekilde kullandığını düşünüyorsan bize yaz.</p>
+
+<h2>11. Haklarınız</h2>
+<p>Hesap olmadığı için, talep üzerine bulup dışa aktarabileceğimiz veya silebileceğimiz kişisel
+   bir verin bizde yok — adına bağlı bir kayıt yok. Uygulamanın ürettiği veri cihazında duruyor
+   ve Ayarlar → Verilerin'den silebilirsin; kalan tek şey 3. bölümdeki kurulum kimliği, onu da
+   uygulamayı silmek götürür. Tek istisna, göndermeyi kendin seçtiğin geri bildirim (9. bölüm):
+   o mesajlar sunucumuzda o kimliğin altında duruyor, yani onları <em>bulabiliyoruz</em> ve
+   silebiliyoruz — kimliğinle bize yaz, silelim. Apple'ın veya RevenueCat'in tuttuğu satın
+   alma kayıtları için <a href="mailto:wipastudios@gmail.com">wipastudios@gmail.com</a>
+   adresine yaz, yardımcı oluruz.</p>
+
+<h2>12. Değişiklikler</h2>
+<p>Bu politikada esaslı bir değişiklik olursa yukarıdaki "son güncelleme" tarihi değişir ve yeni
+   metin, anlattığı uygulama sürümü yayınlanmadan önce burada yayımlanır.</p>
+
+<footer>
+  <p>Wipa Studios · <a href="mailto:wipastudios@gmail.com">wipastudios@gmail.com</a></p>
+</footer>
+</div>
+</body>
+</html>
