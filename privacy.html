@@ -181,7 +181,7 @@
 <div class="tablewrap">
 <table>
   <tr><th>What</th><th>Why</th><th>How to remove it</th></tr>
-  <tr><td>Your nickname and colour</td><td>So the room can show who you are</td>
+  <tr><td>Your nickname, colour and player ID</td><td>So the room can show who you are, and so a block still holds tomorrow</td>
       <td>Settings → Your data → Everything</td></tr>
   <tr><td>Saved nights (the vault) and badges</td><td>The memory book</td>
       <td>Settings → Your data → Saved nights</td></tr>
@@ -198,6 +198,14 @@
 <h2>8. Reports and blocks</h2>
 <p>If you block a player, that decision stays on your device: they are removed from the table at
    once and cannot join your rooms again. Nothing about a block is sent anywhere.</p>
+<p>A block is attached to a <strong>player ID</strong>, not to a nickname &mdash; nicknames are not
+   unique, and blocking one would otherwise catch an innocent player with the same name. Your
+   device generates that ID once, at random, and keeps it. It means nothing outside Kadra, it is
+   shared with the people in your room exactly the way your nickname is. When you play apart it
+   travels through the relay described in section 2, which keeps nothing; we never store it and
+   never attach it to a report. Without a lasting ID a block would last one evening: the blocked player would come back
+   the next night under a new number. &ldquo;Delete everything&rdquo; resets the ID too, which
+   makes your device a new player.</p>
 <p>If you <em>report</em> a photo or a player, the report is stored on your device, the player is
    blocked for you, <strong>and a copy of the report is sent to us</strong>: the reason you
    picked, anything you wrote, and the same six fields listed in section 9 (app version and
