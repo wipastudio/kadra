@@ -14,7 +14,7 @@
   <h1>Privacy Policy</h1>
   <p class="lede">Kadra is a game made of your own photos, so this is the part that matters
      most. It is written to be checkable, not reassuring.</p>
-  <p class="updated">Last updated: 1 October 2026 (blocks notify us, reported players can be removed from rooms, retention listed) · applies to Kadra 1.0 for iOS</p>
+  <p class="updated">Last updated: 1 October 2026 (one block warns, several remove; blocks notify us, reported players can be removed from rooms, retention listed) · applies to Kadra 1.0 for iOS</p>
   <nav>
     <a href="./">Support</a>
     <a href="privacy.html" aria-current="page">Privacy Policy</a>
@@ -230,6 +230,13 @@
    again; the block is kept on your device. <strong>We are told too</strong>: the app sends us
    the blocked player's ID and nothing else — no name, no photo, no note. App Store rules require
    that blocking notify the developer, and the block screen says so before you confirm.</p>
+<p>On our server, each block is counted as a pair: the blocked player's ID and the install
+   identifier of the device that blocked them (section 3), so that one device blocking the same
+   player twice counts once. Unblocking someone sends the same ID with "unblock" and deletes your
+   pair. One block is not a ban: the app on the blocked player's phone asks our server, using
+   only its own player ID, how many devices have blocked it, and shows a warning when the number
+   goes up. It is never told who. At <strong>two or more</strong> blocking devices (a report counts
+   as a block) the player is removed from rooms automatically, as described below.</p>
 
 <h3>Reporting</h3>
 <p>If you <em>report</em> a photo or a player, the report is stored on your device, the player is
@@ -247,10 +254,11 @@
    If a report or a block cannot be sent because you are offline, it waits on your device and is
    sent the next time the app opens.</p>
 
-<h3>What we do with a report</h3>
+<h3>What we do with a report, and when a player is removed</h3>
 <p>We review reports within 24 hours. Content that breaks the Terms of Use is deleted, and the
    player ID that brought it is added to a list of removed players: a device with that ID can no
-   longer open or join rooms with other phones. That list holds the player ID, the date and our
+   longer open or join rooms with other phones. A player ID blocked from two or more devices is
+   removed the same way, automatically, for as long as those blocks stand. That list holds the player ID, the date and our
    note, nothing else, and it is kept for as long as the removal stands. Removal is tied to the
    player ID, so it does not follow a person to a fresh install — without accounts nothing can,
    and we would rather say so.</p>
@@ -292,6 +300,7 @@
   <tr><th>Data on our server</th><th>Kept for</th></tr>
   <tr><td>Reported photos and sample frames</td><td>30 days</td></tr>
   <tr><td>Report and block messages, feedback</td><td>180 days</td></tr>
+  <tr><td>Block counts (blocked player ID + blocking install)</td><td>180 days, or until unblocked</td></tr>
   <tr><td>Premium status records</td><td>180 days after the last check</td></tr>
   <tr><td>Request counters</td><td>2 days</td></tr>
   <tr><td>Gift-night records, removed-player list</td><td>As long as the gift or the removal stands</td></tr>
