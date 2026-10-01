@@ -14,7 +14,7 @@
   <h1>Privacy Policy</h1>
   <p class="lede">Kadra is a game made of your own photos, so this is the part that matters
      most. It is written to be checkable, not reassuring.</p>
-  <p class="updated">Last updated: 22 September 2026 (reports are sent to us) · applies to Kadra 1.0 for iOS</p>
+  <p class="updated">Last updated: 1 October 2026 (blocks notify us, reported players can be removed from rooms, retention listed) · applies to Kadra 1.0 for iOS</p>
   <nav>
     <a href="./">Support</a>
     <a href="privacy.html" aria-current="page">Privacy Policy</a>
@@ -24,13 +24,17 @@
 </header>
 
 <div class="box">
-  <p><strong>The short version.</strong> There are no accounts. Your photos are never stored on
-     any server, and no image is ever sent to analytics. Nothing you do in the app is tied to your
-     name, your email or your Apple Account — only to a random identifier created on your device.</p>
+  <p><strong>The short version.</strong> There are no accounts. Game photos go only to the
+     phones at your table and are not kept on any server. There are exactly two exceptions, and
+     the app shows each one before it happens: a photo someone <em>reports</em> reaches us and is
+     deleted after 30 days, and <em>sample frames</em> reach us only if you switch them on. No
+     image is ever sent to analytics. Nothing you do in the app is tied to your name, your email
+     or your Apple Account — only to random identifiers created on your device.</p>
 </div>
 
 <h2>1. Who we are</h2>
-<p>Kadra is developed by Wipa Studios ("we", "us"). For anything in this policy, write to
+<p>Kadra is developed by Wipa Studios ("we", "us"), which decides how the data described here is
+   used. For anything in this policy, write to
    <a href="mailto:wipastudios@gmail.com">wipastudios@gmail.com</a>.</p>
 
 <h2>2. Your photos</h2>
@@ -41,14 +45,23 @@
    picked. If you grant access to selected photos only, Kadra can see nothing else.</p>
 
 <h3>What is excluded automatically</h3>
+<p>When the scope is your whole library or an album:</p>
 <ul>
   <li>Screenshots and document scans.</li>
   <li>Anything created in the last 48 hours.</li>
+</ul>
+<p>Photos you pick one by one are used exactly as you picked them; those two filters do not
+   apply to them. In every scope:</p>
+<ul>
   <li>Your Hidden album — iOS does not expose it to apps, so Kadra never sees it.</li>
   <li>Photos you marked "never show this one again".</li>
 </ul>
-<p>Each candidate is additionally checked with Apple's on-device Sensitive Content Analysis.
-   That analysis runs on your device; its result never leaves it.</p>
+<p>When iOS's Sensitive Content Warning is switched on for your device (Settings → Privacy &amp;
+   Security), each photo is also checked with Apple's on-device Sensitive Content Analysis before
+   it can enter a hand, including photos you send in Jury. A photo it flags is dropped without
+   being shown or sent. That analysis runs on your device; its result never leaves it. When
+   the iOS setting is off, iOS does not run the check, and the Shield, reporting and blocking are
+   what protect the table — Settings → Your data shows which applies on your device.</p>
 
 <h3>Playing in the same room</h3>
 <p>Devices find each other over the local network using Apple's MultipeerConnectivity, and the
@@ -57,9 +70,13 @@
 
 <h3>Playing apart</h3>
 <p>The photo for the current hand passes through a realtime message channel operated by
-   Supabase so the other players can see it. It is relayed, not stored: it is not written to a
-   database or to file storage, and it is not retained after the hand. We cannot retrieve a
-   photo after the fact, because there is nowhere for it to have been kept.</p>
+   Supabase so the other players can see it. It is <strong>end-to-end encrypted</strong> with keys
+   that exist only on the players' devices, so the relay cannot read it. It is relayed, not stored:
+   it is not written to a database or to file storage, and it is not retained after the hand.</p>
+
+<h3>What goes with a photo</h3>
+<p>The other players receive the image itself (re-encoded at 800 pixels, without its original
+   metadata) and, in modes that ask when a photo was taken, its capture date.</p>
 
 <h3>What is never transmitted</h3>
 <p>Regardless of mode, the following never leave your device: the photo file name, its local
@@ -69,55 +86,61 @@
 <h2>3. Usage analytics</h2>
 <p>Kadra records which screens you open and which buttons you press, so we can decide what to
    improve. These events are sent to Google Firebase Analytics, which processes them on our
-   behalf. You can switch this off at any time: <strong>Settings → Your data → Share anonymous
-   usage</strong>. Turning it off stops collection entirely.</p>
+   behalf. Analytics is on when you install the app, and you can switch it off at any time:
+   <strong>Settings → Your data → Share anonymous usage</strong>. Turning it off stops collection
+   entirely. (The switch says "anonymous" because it is short; below is the exact meaning.)</p>
 
 <h3>What an event contains</h3>
 <p>The name of a screen or button, the game mode being played, how many people are in the room,
    whether this device opened the room or joined it, whether a photo finished loading and how
-   long it took, and the size band of a transferred photo. That last pair is how we tell whether
-   the app is actually working for people — an empty frame is a bug we cannot otherwise see.</p>
+   long it took, the size band of a transferred photo, whether photo access was granted, the type
+   of network connection, purchase events (which product, and whether the purchase completed), and
+   that a report or a block happened (for a report, only the reason category you picked).</p>
 
 <h3>What an event never contains</h3>
 <p>By design, and enforced by an automated check that runs on every build: any photo or
    thumbnail, a file name or identifier, a capture location, an album name, the text of a report,
-   your nickname, or a room code. <strong>No image, and nothing derived from an image, is ever
-   sent to analytics.</strong></p>
+   your nickname, a player's ID, or a room code. <strong>No image, and nothing derived from an
+   image, is ever sent to analytics.</strong></p>
 
-<h3>The identifier, in plain terms</h3>
-<p>Events are grouped under a <strong>random identifier generated on your device</strong> when you
-   first open the app. It exists so that, when something breaks, we can follow one sequence of
-   steps and see where it broke. We want to be exact about what this does and does not mean:</p>
+<h3>The identifiers, in plain terms</h3>
+<p>Kadra creates a <strong>random install identifier</strong> on your device when you first open
+   the app. It exists so that, when something breaks, we can follow one sequence of steps and see
+   where it broke, and so our server can apply limits and keep your purchase status. We want to be
+   exact about what this does and does not mean:</p>
 <ul>
-  <li>It is <strong>not</strong> derived from your device. We do not use the IDFA or the vendor
-      identifier.</li>
-  <li>It is <strong>not</strong> linked to your name, your email, your Apple Account or your
-      purchases, because Kadra has none of those.</li>
+  <li>It is <strong>not</strong> derived from your device. We do not use the IDFA, and the app
+      tells Firebase not to collect the vendor identifier (IDFV).</li>
+  <li>It is <strong>not</strong> linked to your name, your email or your Apple Account, because
+      Kadra has none of those. It <strong>is</strong> linked on our server to whether you have
+      Premium (section 5).</li>
   <li>It <strong>does</strong> connect your own events to each other. That makes it
       <em>pseudonymous</em> rather than anonymous, and we would rather say so than use a word
       that sounds better than it is.</li>
-  <li>It <strong>cannot be reset from inside the app.</strong> Earlier versions had a reset
-      button; it was removed when gift nights (below) were added, because a gift is tied to this
-      identifier and a resettable one would make a one-night gift reusable. The identifier lives
-      only in the app's own storage: deleting the app discards it, and a fresh install gets a
-      new one.</li>
+  <li>It <strong>cannot be reset from inside the app.</strong> A gift (below) is tied to this
+      identifier, and a resettable one would make a one-night gift reusable. It lives only in the
+      app's own storage: deleting the app discards it, and a fresh install gets a new one.</li>
   <li><strong>Gift nights.</strong> We can grant a single premium night by hand to a specific
-      installation or to a specific room code. When you host a room without a premium pass, the
-      app sends this identifier and the room code to our server and asks whether such a gift
-      exists. The answer is yes or no. If it is no, nothing is stored. If it is yes, the server
-      records which installation used the gift and when, so it cannot be used twice.</li>
+      installation or to a specific room code. When you host a room without Premium, the app sends
+      this identifier and the room code to our server and asks whether such a gift exists. The
+      answer is yes or no. If it is no, nothing is stored. If it is yes, the server records which
+      installation used the gift and when, so it cannot be used twice; that record is kept for as
+      long as the gift exists.</li>
 </ul>
-<p>Firebase also assigns its own installation identifier and records approximate region, device
-   model and app version. Google's terms for this service are at
+<p>Firebase also assigns its own <strong>app instance identifier</strong> and records approximate
+   region (derived from the IP address, which Google does not store for us), device model and app
+   version. Google's terms for this service are at
    <a href="https://firebase.google.com/terms/data-processing-terms">firebase.google.com/terms</a>.</p>
+<p>Separately, Kadra has a <strong>player ID</strong>: a second random identifier that the other
+   players in your room see, the way they see your nickname. Section 8 explains what it is for.</p>
 
 <h2>4. Sample frames — off unless you turn it on</h2>
-<p>This is the only place where a photo of yours can leave your device for us, and it happens
-   only if you choose it. During setup you are asked a direct question with two equal answers and
-   <strong>neither is pre-selected</strong>; you cannot skip past it without answering. The
-   default state is off. You can change the answer at any time in Settings &rarr; Your data.</p>
+<p>This is the only place where a photo of yours can leave your device for us by your own
+   choice. It is <strong>off by default</strong>, the app never switches it on for you, and
+   nothing in the game depends on it. You can turn it on or off at any time in
+   <strong>Settings → Your data → Send a sample frame</strong>.</p>
 
-<h3>What is sent, if you say yes</h3>
+<h3>What is sent, if you turn it on</h3>
 <ul>
   <li><strong>One frame per night, at most</strong>, chosen at random from the hands you play —
       not the first one, so that it is not always the photo people open with.</li>
@@ -128,9 +151,9 @@
   <li>The image is the same 800-pixel re-encoded JPEG the game itself uses. Because it is drawn
       from a rendered frame rather than copied from the original file, <strong>EXIF metadata,
       including GPS coordinates, does not survive that step.</strong></li>
-  <li>Alongside it: the identifier described above, a timestamp, and the app version.
-      Nothing else — no file name, no local identifier, no capture location, no album name, no
-      nickname, no room code.</li>
+  <li>Alongside it: the install identifier described above and the time it arrived. Nothing else —
+      no file name, no local identifier, no capture location, no album name, no nickname, no room
+      code.</li>
 </ul>
 
 <h3>What we do with it</h3>
@@ -141,33 +164,29 @@
    modes are designed.</p>
 
 <h3>How long, and how to remove it</h3>
-<p>Frames are deleted automatically <strong>30 days</strong> after they are sent; this is enforced
-   by a storage lifecycle rule, not by anyone remembering to do it. You can delete everything you
-   have sent immediately from Settings &rarr; Your data &rarr; Frames you have sent &rarr; Delete.
-   That button works whether or not the setting is currently on, and &ldquo;Delete everything&rdquo;
-   removes them too. Stored frames are readable only by us; the storage rules deny read access to
-   every client.</p>
-
-<h3>If you say no</h3>
-<p>Nothing is sent, and the game is identical in every other respect. There is no feature, mode or
-   content behind this answer.</p>
+<p>Frames are deleted automatically <strong>30 days</strong> after they are sent, by a scheduled
+   job on our server. You can delete everything you have sent immediately from Settings &rarr; Your
+   data &rarr; Frames you have sent &rarr; Delete. That button works whether or not the setting is
+   currently on, and &ldquo;Delete everything&rdquo; removes them too. Stored frames are readable
+   only by us; the storage rules deny read access to every client.</p>
 
 <h2>5. Purchases</h2>
 <p>Kadra Premium is sold through Apple's In-App Purchase. We never see your payment details;
    Apple handles the transaction.</p>
 <p>To know whether your purchase is active, we use RevenueCat, Inc. as a subscription
-   management service. RevenueCat receives your purchase history and an anonymous identifier
-   generated for your installation. It does not receive your name, your email or your Apple
-   Account, and we do not link that identifier to any identity. RevenueCat's own privacy policy
-   is at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
+   management service. RevenueCat receives your purchase history, an anonymous identifier it
+   generates for your installation, and the Firebase app instance identifier from section 3, so
+   that a purchase can be matched to the screen it was made from. It does not receive your name,
+   your email or your Apple Account. RevenueCat's own privacy policy is at
+   <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
 <p><strong>The check does not rest on your device alone.</strong> So that a paid feature cannot
-   be unlocked by editing the app, the app sends the random identifier described above and the
-   anonymous identifier RevenueCat generated for this installation to our server. The server
-   asks RevenueCat whether that installation has an active purchase and stores the answer:
-   premium yes or no, whether it came from a purchase or a gift night, until when, and the time
-   of the check. Your payment details are not part of this and never reach us. If our server
-   cannot answer, the app falls back to what the store SDK reports, so a purchase still works
-   when the network does not.</p>
+   be unlocked by editing the app, the app sends the install identifier and RevenueCat's
+   identifier for this installation to our server. The server asks RevenueCat whether that
+   installation has an active purchase and stores the answer: premium yes or no, whether it came
+   from a purchase or a gift night, until when, and the time of the check. That record is deleted
+   180 days after the last check. Your payment details are not part of this and never reach us.
+   If our server cannot answer, the app falls back to what the store SDK reports, so a purchase
+   still works when the network does not.</p>
 
 <h2>6. Keeping the service usable</h2>
 <p>Anyone can send requests to our server, so each request is counted against two keys: the
@@ -189,43 +208,55 @@
       <td>Settings → Your data → Never-show list</td></tr>
   <tr><td>Blocked players and reports</td><td>So you are not matched with them again</td>
       <td>Settings → Your data → Everything</td></tr>
-  <tr><td>Your preferences (shield on/off, analytics on/off)</td><td>So we do not ask every time</td>
+  <tr><td>Reports and blocks not yet delivered</td><td>Kept until they reach us, so one made offline is not lost</td>
       <td>Settings → Your data → Everything</td></tr>
+  <tr><td>Your preferences</td><td>So we do not ask every time</td>
+      <td>Settings → Your data → Everything (your analytics choice is kept, so "off" stays off)</td></tr>
 </table>
 </div>
 <p>Deleting the app removes all of it as well.</p>
 
 <h2>8. Reports and blocks</h2>
-<p>If you block a player, that decision stays on your device: they are removed from the table at
-   once and cannot join your rooms again. Nothing about a block is sent anywhere.</p>
-<p>A block is attached to a <strong>player ID</strong>, not to a nickname &mdash; nicknames are not
-   unique, and blocking one would otherwise catch an innocent player with the same name. Your
-   device generates that ID once, at random, and keeps it. It means nothing outside Kadra, it is
-   shared with the people in your room exactly the way your nickname is. When you play apart it
-   travels through the relay described in section 2, which keeps nothing; we never store it and
-   never attach it to a report. Without a lasting ID a block would last one evening: the blocked player would come back
-   the next night under a new number. &ldquo;Delete everything&rdquo; resets the ID too, which
-   makes your device a new player.</p>
+<p>A block or a report is attached to a <strong>player ID</strong>, not to a nickname &mdash;
+   nicknames are not unique, and blocking one would otherwise catch an innocent player with the
+   same name. Each device generates its player ID once, at random, and keeps it. It means nothing
+   outside Kadra, and it is shared with the people in your room exactly the way your nickname is.
+   Without a lasting ID a block would last one evening: the blocked player would come back the
+   next night under a new number. &ldquo;Delete everything&rdquo; resets the ID too, which makes
+   your device a new player.</p>
+
+<h3>Blocking</h3>
+<p>If you block a player, they are removed from your table at once and cannot join your rooms
+   again; the block is kept on your device. <strong>We are told too</strong>: the app sends us
+   the blocked player's ID and nothing else — no name, no photo, no note. App Store rules require
+   that blocking notify the developer, and the block screen says so before you confirm.</p>
+
+<h3>Reporting</h3>
 <p>If you <em>report</em> a photo or a player, the report is stored on your device, the player is
-   blocked for you, <strong>and a copy of the report is sent to us</strong>: the reason you
-   picked, anything you wrote, and the same six fields listed in section 9 (app version and
-   build, language, device model, install identifier).</p>
+   blocked for you, <strong>and a copy of the report is sent to us</strong>: the reason you picked,
+   anything you wrote, the reported player's ID, and the same fields listed in section 9 (app
+   version and build, language, device model, install identifier).</p>
 <p><strong>The photo that was on screen is sent with it</strong>, and only that one photo — never
    the rest of the night, and never a photo from any other round. It is not sent at all if the
    photo does not belong to the player you are reporting, if its owner had already withdrawn it
    with the Shield, or if the round was void; in those cases the report goes without an image
-   and says so. The reported player's name is never sent — we hold no identity for them, and it
-   would not help us. The report screen lists exactly what is sent before you send it.</p>
+   and says so. The reported player's name is never sent. The report screen lists exactly what is
+   sent before you send it.</p>
 <p>The photo goes to a private store that no app client can read, list or write to — every
-   upload passes through a server function that checks the file and generates the path. We
-   delete it after 30 days.</p>
-<p>This changed in September 2026, and it is a change in the other direction from the rest of
-   this policy, so we will say plainly why: the App Store requires that reporting and blocking
-   in an app with user content actually notify the developer, so that objectionable content can
-   be <em>removed</em> within 24 hours. A report that never left your phone could not do that,
-   and neither could one that described a photo we were never allowed to see. This is the one
-   place where a photo leaves a device without its owner's consent, and the reason is safety,
-   not convenience.</p>
+   upload passes through a server function that checks the file and generates the path.
+   If a report or a block cannot be sent because you are offline, it waits on your device and is
+   sent the next time the app opens.</p>
+
+<h3>What we do with a report</h3>
+<p>We review reports within 24 hours. Content that breaks the Terms of Use is deleted, and the
+   player ID that brought it is added to a list of removed players: a device with that ID can no
+   longer open or join rooms with other phones. That list holds the player ID, the date and our
+   note, nothing else, and it is kept for as long as the removal stands. Removal is tied to the
+   player ID, so it does not follow a person to a fresh install — without accounts nothing can,
+   and we would rather say so.</p>
+<p>This is the one place where a photo can leave a device without its owner's consent, and the
+   reason is safety, not convenience: the App Store requires that objectionable content in an
+   app with user content can actually be removed by the developer.</p>
 
 <h2>9. Feedback you send us</h2>
 <p>Settings has a feedback box. Nothing is sent from it unless you write something and tap
@@ -238,28 +269,60 @@
 <p>Feedback and reports (section 8) are the only places where something you write leaves your
    device, and both are deliberate: you type it, you can read exactly what goes with it, and it
    only moves when you tap the button.</p>
-<p>We use feedback only to understand and fix problems. Messages are deleted after 180 days.
-   To have yours deleted sooner, email us with your install identifier (Settings → Your data →
-   copy) and we will remove it. Feedback is limited to five messages per install per day.</p>
+<p>We use feedback only to understand and fix problems. Feedback is limited to five messages per
+   install per day; reports and blocks have their own, higher limit, so writing to us never uses
+   up your ability to report.</p>
 
-<h2>10. Children</h2>
-<p>Kadra is not directed at children. Because the game is played with whatever photos are on
-   the players' phones, its content is determined by the people at the table, and the App Store
-   age rating reflects that. If you believe a child has used the app in a way that concerns you,
-   write to us.</p>
+<h2>10. Who processes data for us, and how long it is kept</h2>
+<div class="tablewrap">
+<table>
+  <tr><th>Service</th><th>What it does for Kadra</th><th>Where</th></tr>
+  <tr><td>Supabase</td><td>Hosts our server and database and relays the realtime channel for playing apart</td><td>Frankfurt, Germany (EU)</td></tr>
+  <tr><td>Google Firebase Analytics</td><td>Usage analytics (section 3)</td><td>Google's infrastructure</td></tr>
+  <tr><td>RevenueCat</td><td>Checks whether a purchase is active (section 5)</td><td>RevenueCat's infrastructure</td></tr>
+  <tr><td>Apple</td><td>In-App Purchase and the App Store</td><td>Apple's infrastructure</td></tr>
+</table>
+</div>
+<p>Each of them processes data only to provide its service to us, under its own terms and
+   data-protection commitments, which protect the data at least as strongly as this policy.
+   None of them receives a photo, except Supabase, which stores reported photos and sample frames
+   for us as described above.</p>
+<div class="tablewrap">
+<table>
+  <tr><th>Data on our server</th><th>Kept for</th></tr>
+  <tr><td>Reported photos and sample frames</td><td>30 days</td></tr>
+  <tr><td>Report and block messages, feedback</td><td>180 days</td></tr>
+  <tr><td>Premium status records</td><td>180 days after the last check</td></tr>
+  <tr><td>Request counters</td><td>2 days</td></tr>
+  <tr><td>Gift-night records, removed-player list</td><td>As long as the gift or the removal stands</td></tr>
+</table>
+</div>
+<p>Deletion is done by scheduled jobs on the server, not by anyone remembering to do it. Analytics
+   events are kept by Google according to the retention setting of our Firebase project.</p>
 
-<h2>11. Your rights</h2>
-<p>Because there are no accounts, we hold no personal data about you that we could look up,
-   export or delete on request — there is no record with your name on it. The data the app
-   creates lives on your device and you can erase it from Settings → Your data; the one thing
-   that stays is the install identifier from section 3, which deleting the app removes.
-   The exceptions are feedback you chose to send (section 9) and reports you chose to send
-   (section 8): those messages sit on our server under that identifier, so those we
-   <em>can</em> find and delete — email us with the identifier and we will.
-   For purchase records held by Apple or RevenueCat, contact
-   <a href="mailto:wipastudios@gmail.com">wipastudios@gmail.com</a> and we will help.</p>
+<h2>11. Children</h2>
+<p>Kadra is not directed at children under 13, and we do not knowingly collect data from them.
+   Because the game is played with whatever photos are on the players' phones, its content is
+   determined by the people at the table. If you believe a child has used the app in a way that
+   concerns you, write to us and we will delete what we hold for that installation.</p>
 
-<h2>12. Changes</h2>
+<h2>12. Your rights</h2>
+<p>There are no accounts, but the identifiers above are still personal data, and you have the
+   right to see, correct, export or delete what is held under them, and to object to or withdraw
+   consent for any of it. Most of it you can do yourself: switch analytics or sample frames off,
+   delete frames you have sent, or erase everything on the device from Settings → Your data.
+   For data on our server (feedback, reports, premium status, sample frames) and for analytics
+   data held by Google, email <a href="mailto:wipastudios@gmail.com">wipastudios@gmail.com</a>
+   with your install identifier (Settings → Your data → copy) and we will act on it within 30
+   days. For purchase records held by Apple or RevenueCat, write to us and we will help.</p>
+<p>We use the data in this policy because it is needed to run the game you asked for (rooms,
+   purchases, reports), because we have a legitimate interest in keeping the app working and safe
+   (analytics, request counters, the removed-player list), or because you chose it (sample
+   frames, feedback). If you are in the EU, the UK or a similar jurisdiction and think we have
+   handled your data wrongly, you can complain to your data-protection authority; we would like to
+   hear from you first.</p>
+
+<h2>13. Changes</h2>
 <p>If this policy changes materially, the "last updated" date above changes and the new version
    is published here before the app version it describes is released.</p>
 
