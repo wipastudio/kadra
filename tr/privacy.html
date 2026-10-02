@@ -226,13 +226,15 @@
    kimliğini gönderir, başka hiçbir şey göndermez — ad, fotoğraf, not yok. App Store kuralları
    engellemenin geliştiriciye bildirilmesini istiyor ve engelleme ekranı bunu onaylamadan önce
    söylüyor.</p>
-<p>Sunucumuzda her engel bir çift olarak sayılır: engellenen oyuncunun kimliği ve onu engelleyen
-   cihazın kurulum kimliği (bölüm 3); böylece aynı cihazın aynı oyuncuyu iki kez engellemesi bir
-   sayılır. Bir engeli kaldırmak aynı kimliği "engeli kaldır" diye gönderir ve senin çiftini siler.
+<p>Sunucumuzda her engel; engellenen oyuncunun kimliği, onu engelleyen cihazın kurulum kimliği
+   (bölüm 3) ve engelin geldiği ağ adresinin tek yönlü özetiyle kaydedilir (adresin kendisi
+   saklanmaz); böylece aynı cihazın ya da aynı ağdaki birkaç cihazın aynı oyuncuyu engellemesi
+   bir sayılır. Bir engeli kaldırmak aynı kimliği "engeli kaldır" diye gönderir ve senin çiftini siler.
    Tek engel yasak değildir: engellenen oyuncunun telefonundaki uygulama, yalnızca kendi oyuncu
    kimliğiyle sunucumuza kaç cihazın onu engellediğini sorar ve sayı artınca bir uyarı gösterir.
-   Kimin engellediği asla söylenmez. <strong>İki ya da daha fazla</strong> cihaz engellediğinde
-   (bildirim de engel sayılır) oyuncu aşağıda anlatıldığı gibi odalardan otomatik olarak çıkarılır.</p>
+   Kimin engellediği asla söylenmez. 30 gün içinde farklı ağlardaki
+   <strong>iki ya da daha fazla</strong> cihaz engellediğinde (bildirim de engel sayılır) oyuncu
+   aşağıda anlatıldığı gibi odalardan otomatik olarak çıkarılır.</p>
 
 <h3>Bildirme</h3>
 <p>Bir fotoğrafı ya da oyuncuyu <em>bildirirsen</em> bildirim cihazında saklanır, oyuncu senin için
@@ -252,8 +254,9 @@
 <h3>Bir bildirimle ne yapıyoruz ve bir oyuncu ne zaman çıkarılır</h3>
 <p>Bildirimleri 24 saat içinde inceliyoruz. Kullanım Koşulları'nı ihlal eden içerik silinir ve onu
    getiren oyuncu kimliği çıkarılan oyuncular listesine eklenir: o kimliğe sahip bir cihaz artık başka
-   telefonlarla oda açamaz ve odaya katılamaz. İki ya da daha fazla cihazın engellediği bir oyuncu
-   kimliği de, o engeller geçerli olduğu sürece, aynı şekilde otomatik olarak çıkarılır. Bu listede oyuncu kimliği, tarih ve notumuzdan başka
+   telefonlarla oda açamaz ve odaya katılamaz. 30 gün içinde farklı ağlardaki iki ya da daha fazla
+   cihazın engellediği bir oyuncu kimliği de, o engeller geçerli olduğu sürece, aynı şekilde
+   otomatik olarak çıkarılır. Bu listede oyuncu kimliği, tarih ve notumuzdan başka
    bir şey yoktur ve çıkarma geçerli olduğu sürece tutulur. Çıkarma oyuncu kimliğine bağlıdır; bu
    yüzden kişiyi yeni bir kuruluma kadar izlemez — hesap olmadan hiçbir şey izleyemez ve bunu
    söylemeyi tercih ediyoruz.</p>
@@ -295,7 +298,7 @@
   <tr><th>Sunucumuzdaki veri</th><th>Saklama süresi</th></tr>
   <tr><td>Bildirilen fotoğraflar ve örnek kareler</td><td>30 gün</td></tr>
   <tr><td>Bildirim ve engelleme mesajları, geri bildirim</td><td>180 gün</td></tr>
-  <tr><td>Engel sayıları (engellenen oyuncu kimliği + engelleyen kurulum)</td><td>180 gün ya da engel kaldırılana kadar</td></tr>
+  <tr><td>Engel kayıtları (engellenen oyuncu kimliği, engelleyen kurulum, ağ adresi özeti)</td><td>180 gün ya da engel kaldırılana kadar</td></tr>
   <tr><td>Premium durum kayıtları</td><td>Son denetimden 180 gün sonra</td></tr>
   <tr><td>İstek sayaçları</td><td>2 gün</td></tr>
   <tr><td>Hediye gece kayıtları, çıkarılan oyuncular listesi</td><td>Hediye ya da çıkarma geçerli olduğu sürece</td></tr>
