@@ -14,7 +14,7 @@
   <h1>Gizlilik Politikası</h1>
   <p class="lede">Kadra kendi fotoğraflarınla oynanan bir oyun; dolayısıyla burası en önemli
      kısım. Güven vermek için değil, kontrol edilebilir olsun diye yazıldı.</p>
-  <p class="updated">Son güncelleme: 1 Ekim 2026 (tek engel uyarır, birden fazlası çıkarır; engellemeler bize bildiriliyor, bildirilen oyuncular odalardan çıkarılabiliyor, saklama süreleri yazıldı) · Kadra 1.0 (iOS) için geçerli</p>
+  <p class="updated">Son güncelleme: 25 Kasım 2026 (fotoğrafla birlikte ne gittiği düzeltildi; Kalkan olmayan modlar; çizimler ve çok kareli eller) · Kadra 1.0 ve sonrası (iOS) için geçerli; "1.1 ile gelen modlar" bölümü 1.1'den itibaren</p>
   <nav>
     <a href="./">Destek</a>
     <a href="privacy.html" aria-current="page">Gizlilik</a>
@@ -61,8 +61,8 @@
    bir ele girmeden önce Apple'ın cihaz üstü Hassas İçerik Analizi'nden de geçer; Jüri'de
    gönderdiğin fotoğraflar dahil. İşaretlenen fotoğraf gösterilmeden ve gönderilmeden çıkarılır.
    Bu analiz cihazında çalışır; sonucu cihazından çıkmaz. iOS ayarı kapalıyken iOS bu denetimi
-   yapmaz; o durumda masayı Kalkan, bildirme ve engelleme korur — hangisinin geçerli olduğunu
-   Ayarlar → Verilerin gösterir.</p>
+   yapmaz; o durumda masayı bildirme ve engelleme, Kalkan'ı olan modlarda (Jüri'de yoktur) ayrıca
+   Kalkan korur — hangisinin geçerli olduğunu Ayarlar → Verilerin gösterir.</p>
 
 <h3>Aynı odada oynarken</h3>
 <p>Cihazlar birbirini Apple'ın MultipeerConnectivity'si ile yerel ağ üzerinden bulur ve elin
@@ -77,7 +77,25 @@
 
 <h3>Fotoğrafla birlikte ne gider</h3>
 <p>Diğer oyunculara görselin kendisi (800 piksele yeniden kodlanmış, özgün üst verisi olmadan) ve
-   fotoğrafın ne zaman çekildiğini soran modlarda çekim tarihi gider.</p>
+   elin ana fotoğrafıyla birlikte, her modda, çekildiği tarih ve saat gider: telefonları bunu zamanı
+   soran modlar, ipuçları ve sonuç ekranı için kullanır. Jüri'de gönderdiğin fotoğraf tarihsiz
+   gider.</p>
+
+<h3>1.1 ile gelen modlar</h3>
+<ul>
+  <li><strong>Çizerek Anlat.</strong> Bir oyuncu fotoğrafı önce görür ve diğerlerine çizerek anlatır.
+      Çizgiler fotoğrafla aynı yoldan gider: aynı odada doğrudan, uzaktan oynarken aktarıcı üzerinden
+      uçtan uca şifreli. Çizim hiçbir sunucuya yazılmaz ve cihaza kaydedilmez; oyun sırasında
+      bellekte durur ve sonraki el başlarken silinir. Analitiğe gönderilmez, hassas içerik
+      denetimine girmez ve bildirime asla eklenmez.</li>
+  <li><strong>Ters Soru ve Eşleştir.</strong> Bu modlarda bir elde birkaç oyuncunun fotoğrafı
+      gösterilir; yani senin konun olmayan bir elde de bir fotoğrafın masada olabilir. Her biri
+      seçtiğin kapsamdan, aynı elemeler ve aynı denetimle gelir, aynı yoldan gider, saklanmaz ve elin
+      ana fotoğrafı değilse tarihsiz gider. <strong>Bu iki modda Kalkan yoktur</strong>: gösterilen
+      fotoğrafı sahibi geri çekemez.</li>
+  <li><strong>Sorgu.</strong> Cevaplar her oyuncunun telefonunda Apple'ın Vision'ı ile çıkarılır.
+      Ne etiketler ne cevaplar telefondan çıkar.</li>
+</ul>
 
 <h3>Asla gönderilmeyenler</h3>
 <p>Mod ne olursa olsun şunlar cihazından çıkmaz: fotoğrafın dosya adı, yerel kimliği, çekildiği
@@ -241,8 +259,9 @@
    engellenir <strong>ve bildirimin bir kopyası bize gönderilir</strong>: seçtiğin sebep, yazdığın
    not, bildirilen oyuncunun kimliği ve bölüm 9'daki alanlar (uygulama sürümü ve derlemesi, dil,
    cihaz modeli, kurulum kimliği).</p>
-<p><strong>Ekrandaki fotoğraf da gönderilir</strong> ve yalnızca o tek fotoğraf — gecenin geri kalanı
-   ve başka bir eldeki fotoğraf asla. Fotoğraf bildirdiğin oyuncuya ait değilse, sahibi onu Kalkanla
+<p><strong>Bildirdiğin fotoğraf da gönderilir</strong>; ekranda birkaç fotoğraf olsa da yalnızca o
+   tek fotoğraf — gecenin geri kalanı ve başka bir eldeki fotoğraf asla. Çizim hiçbir zaman eklenmez.
+   Fotoğraf bildirdiğin oyuncuya ait değilse, sahibi onu Kalkanla
    zaten çekmişse ya da el boş sayıldıysa hiç gönderilmez; o durumda bildirim görselsiz gider ve
    bunu söyler. Bildirilen oyuncunun adı asla gönderilmez. Bildirim ekranı neyin gittiğini göndermeden
    önce tam olarak listeler.</p>

@@ -14,7 +14,7 @@
   <h1>Privacy Policy</h1>
   <p class="lede">Kadra is a game made of your own photos, so this is the part that matters
      most. It is written to be checkable, not reassuring.</p>
-  <p class="updated">Last updated: 1 October 2026 (one block warns, several remove; blocks notify us, reported players can be removed from rooms, retention listed) · applies to Kadra 1.0 for iOS</p>
+  <p class="updated">Last updated: 25 November 2026 (what goes with a photo corrected; modes without the Shield; drawings and hands with several photos) · applies to Kadra 1.0 and later for iOS; the section "Modes added in 1.1" from 1.1</p>
   <nav>
     <a href="./">Support</a>
     <a href="privacy.html" aria-current="page">Privacy Policy</a>
@@ -60,8 +60,9 @@
    Security), each photo is also checked with Apple's on-device Sensitive Content Analysis before
    it can enter a hand, including photos you send in Jury. A photo it flags is dropped without
    being shown or sent. That analysis runs on your device; its result never leaves it. When
-   the iOS setting is off, iOS does not run the check, and the Shield, reporting and blocking are
-   what protect the table — Settings → Your data shows which applies on your device.</p>
+   the iOS setting is off, iOS does not run the check, and reporting and blocking are what protect
+   the table, together with the Shield in the modes that have it (Jury does not) — Settings → Your
+   data shows which applies on your device.</p>
 
 <h3>Playing in the same room</h3>
 <p>Devices find each other over the local network using Apple's MultipeerConnectivity, and the
@@ -76,7 +77,25 @@
 
 <h3>What goes with a photo</h3>
 <p>The other players receive the image itself (re-encoded at 800 pixels, without its original
-   metadata) and, in modes that ask when a photo was taken, its capture date.</p>
+   metadata) and, with the hand's main photo, the date and time it was taken, in every mode: their
+   phones need it for modes that ask about time, for clues and for the result screen. A photo you
+   send in Jury goes without its date.</p>
+
+<h3>Modes added in 1.1</h3>
+<ul>
+  <li><strong>Sketch It.</strong> One player sees the photo first and draws it for the others. The lines
+      travel the same way as the photo: directly in the same room, end-to-end encrypted through the
+      relay when you play apart. A drawing is never written to a server or saved on a device; it
+      stays in memory during the game and is cleared when the next hand starts. It is not sent to
+      analytics, is not part of the sensitive content check, and is never attached to a report.</li>
+  <li><strong>Reverse Ask and Match Up.</strong> These show photos from several players in one hand,
+      so a photo of yours can be on the table in a hand that is not about you. Each comes from the
+      scope you chose, under the same exclusions and the same check, travels the same way, is not
+      stored, and, when it is not the hand's main photo, goes without its date. <strong>These two
+      modes have no Shield</strong>: once shown, a photo cannot be withdrawn by its owner.</li>
+  <li><strong>Interrogation.</strong> The answers are worked out on each player's phone with Apple's
+      Vision. Neither the labels nor the answers leave the phone.</li>
+</ul>
 
 <h3>What is never transmitted</h3>
 <p>Regardless of mode, the following never leave your device: the photo file name, its local
@@ -245,8 +264,9 @@
    blocked for you, <strong>and a copy of the report is sent to us</strong>: the reason you picked,
    anything you wrote, the reported player's ID, and the same fields listed in section 9 (app
    version and build, language, device model, install identifier).</p>
-<p><strong>The photo that was on screen is sent with it</strong>, and only that one photo — never
-   the rest of the night, and never a photo from any other round. It is not sent at all if the
+<p><strong>The photo you reported is sent with it</strong>, and only that one photo, even when
+   several were on screen — never the rest of the night, and never a photo from any other round. A
+   drawing is never attached. The photo is not sent at all if the
    photo does not belong to the player you are reporting, if its owner had already withdrawn it
    with the Shield, or if the round was void; in those cases the report goes without an image
    and says so. The reported player's name is never sent. The report screen lists exactly what is
